@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apiproject
+  labels:
+    app: apiproject
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apiproject
+  template:
+    metadata:
+      labels:
+        app: apiproject
+    spec:
+      containers:
+        - name: apiproject
+          image: apiproject:latest
+          imagePullPolicy: Never   # use the local image built in Docker Desktop, don't try to pull from a registry
+          ports:
+            - containerPort: 8080
+          # env:
+          #   - name: EXAMPLE_ENV_VAR
+          #     value: "example-value"
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "256Mi"

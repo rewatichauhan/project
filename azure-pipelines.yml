@@ -1,29 +1,45 @@
-# Docker
-# Build a Docker image
-# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
-
 trigger:
-- main
+  branches:
+    include:
+      - none   
 
-resources:
-- repo: self
+pool:
+  name: localK8   
 
 variables:
-  tag: '$(Build.BuildId)'
+  imageName: 'apiproject'
+  imageTag: '$(Build.BuildId)'
 
 stages:
-- stage: Build
-  displayName: Build image
-  jobs:
-  - job: Build
-    displayName: Build
-    pool:
-      vmImage: ubuntu-latest
-    steps:
-    - task: Docker@2
-      displayName: Build an image
-      inputs:
-        command: build
-        dockerfile: '$(Build.SourcesDirectory)/api/apiproject/Dockerfile'
-        tags: |
-          $(tag)
+  - stage: Build
+    displayName: 'Build Docker image'
+    jobs:
+      - job: BuildImage
+        displayName: 'Build image locally'
+        steps:
+          - script: |
+              docker build -t $(imageName):$(imageTag) .
+            displayName: 'docker build'
+            workingDirectory: '$(Build.SourcesDirectory)/api/apiproject/Dockerfile'
+            
+
+  - stage: Deploy
+    displayName: 'Deploy to local Kubernetes'
+    dependsOn: Build
+    jobs:
+      - job: DeployToK8s
+        displayName: 'kubectl apply'
+        steps:
+          - script: |
+              kubectl config current-context
+            displayName: 'Confirm cluster context (should be docker-desktop)'
+
+          - script: |
+              kubectl apply -f k8s/
+            displayName: 'Apply manifests'
+            workingDirectory: '$(Build.SourcesDirectory)/api/apiproject/k8s'
+            
+
+          - script: |
+              kubectl rollout status deployment/apiproject --timeout=90s
+            displayName: 'Wait for rollout to complete'
