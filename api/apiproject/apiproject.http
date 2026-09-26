@@ -1,0 +1,15 @@
+@apiproject_HostAddress = http://localhost:5183
+
+### Fetch public gists for a GitHub user (replace 'torvalds' with any GitHub username)
+GET {{apiproject_HostAddress}}/torvalds?page=1&perPage=10
+Accept: application/json
+
+###
+
+### Example: fetch gists for another user
+GET {{apiproject_HostAddress}}/gvanrossum?page=1&perPage=10
+Accept: application/json
+
+###
+GET {{apiproject_HostAddress}}/octocat?page=1&perPage=10
+Accept: application/json
