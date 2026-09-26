@@ -20,7 +20,7 @@ stages:
           - script: |
               docker build -t $(imageName):$(imageTag) .
             displayName: 'docker build'
-            workingDirectory: '$(Build.SourcesDirectory)/api/apiproject/Dockerfile'
+            workingDirectory: '$(Build.SourcesDirectory)/api/apiproject'
             
 
   - stage: Deploy
