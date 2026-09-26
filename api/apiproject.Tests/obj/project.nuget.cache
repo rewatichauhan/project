@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8f8hZTKeXbc=",
+  "dgSpecHash": "lOvlsT4KhNY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Arindam\\Downloads\\project\\project\\api\\apiproject.Tests\\apiproject.Tests.csproj",
+  "projectFilePath": "C:\\Users\\Arindam\\Downloads\\expert\\project\\api\\apiproject.Tests\\apiproject.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Arindam\\.nuget\\packages\\coverlet.collector\\6.0.4\\coverlet.collector.6.0.4.nupkg.sha512",
     "C:\\Users\\Arindam\\.nuget\\packages\\microsoft.applicationinsights\\2.22.0\\microsoft.applicationinsights.2.22.0.nupkg.sha512",

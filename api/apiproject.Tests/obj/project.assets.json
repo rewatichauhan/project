@@ -3241,14 +3241,14 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Arindam\\Downloads\\project\\project\\api\\apiproject.Tests\\apiproject.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\Arindam\\Downloads\\expert\\project\\api\\apiproject.Tests\\apiproject.Tests.csproj",
       "projectName": "apiproject.Tests",
-      "projectPath": "C:\\Users\\Arindam\\Downloads\\project\\project\\api\\apiproject.Tests\\apiproject.Tests.csproj",
+      "projectPath": "C:\\Users\\Arindam\\Downloads\\expert\\project\\api\\apiproject.Tests\\apiproject.Tests.csproj",
       "packagesPath": "C:\\Users\\Arindam\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Arindam\\Downloads\\project\\project\\api\\apiproject.Tests\\obj\\",
+      "outputPath": "C:\\Users\\Arindam\\Downloads\\expert\\project\\api\\apiproject.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Arindam\\Downloads\\project\\project\\api\\apiproject.Tests\\NuGet.Config",
+        "C:\\Users\\Arindam\\Downloads\\expert\\project\\api\\apiproject.Tests\\NuGet.Config",
         "C:\\Users\\Arindam\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3263,8 +3263,8 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "C:\\Users\\Arindam\\Downloads\\project\\project\\api\\apiproject\\apiproject.csproj": {
-              "projectPath": "C:\\Users\\Arindam\\Downloads\\project\\project\\api\\apiproject\\apiproject.csproj"
+            "C:\\Users\\Arindam\\Downloads\\expert\\project\\api\\apiproject\\apiproject.csproj": {
+              "projectPath": "C:\\Users\\Arindam\\Downloads\\expert\\project\\api\\apiproject\\apiproject.csproj"
             }
           }
         }
