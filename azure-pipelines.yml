@@ -35,10 +35,10 @@ stages:
             displayName: 'Confirm cluster context (should be docker-desktop)'
 
           - script: |
-              kubectl apply -f k8s/
+              kubectl apply -f .
             displayName: 'Apply manifests'
             workingDirectory: '$(Build.SourcesDirectory)/api/apiproject/k8s'
-            
+             
 
           - script: |
               kubectl rollout status deployment/apiproject --timeout=90s
