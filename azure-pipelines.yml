@@ -6,12 +6,15 @@
 trigger:
 - none
 
+
 pool:
   name: my-system
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- script: |
+      docker build -t apiproject:latest .
+  displayName: 'docker build'
+  workingDirectory: '$(Build.SourcesDirectory)/api/apiproject'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
