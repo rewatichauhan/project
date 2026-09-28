@@ -7,7 +7,7 @@ trigger:
 - none
 
 pool:
-  vmImage: my-system
+  name: my-system
 
 steps:
 - script: echo Hello, world!
